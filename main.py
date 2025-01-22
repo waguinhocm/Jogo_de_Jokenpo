@@ -12,8 +12,6 @@ papel
 tesoura
       """)
 try:
-    minhaEscolha = random.choice(["pedra", "papel", "tesoura"])
-    print("Jogador 1 já escolheu")
     suaEscolha = input("Jogador 2 - Escolha pedra, papel ou tesoura: ")
     if minhaEscolha == "pedra":
         if suaEscolha == "papel":
@@ -36,6 +34,7 @@ try:
             print("Jogador 2 perdeu! Jogador 1 escolheu ", minhaEscolha)
         else:
             print("Empate! Ambos escolheram ", minhaEscolha)
-        
+    minhaEscolha = random.choice(["pedra", "papel", "tesoura"])
+    print("Jogador 1 já escolheu")
 except:
     print("Algo deu errado!")
