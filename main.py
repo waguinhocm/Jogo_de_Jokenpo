@@ -3,7 +3,6 @@ import random
 
 print("Olá! Vamos jogar?")
 
-
 print("""
 pedra
       
@@ -11,30 +10,29 @@ papel
       
 tesoura
       """)
-try:
-    suaEscolha = input("Jogador 2 - Escolha pedra, papel ou tesoura: ")
-    if minhaEscolha == "pedra":
-        if suaEscolha == "papel":
-            print("Jogador 2 ganhou! Jogador 1 escolheu ", minhaEscolha)
-        elif suaEscolha == "tesoura":
-            print("Jogador 2 perdeu! Jogador 1 escolheu ", minhaEscolha)
-        else:
-            print("Empate! Ambos escolheram ", minhaEscolha)
+
+suaEscolha = input("Jogador - Escolha pedra, papel ou tesoura: ")
+minhaEscolha = random.choice(["pedra", "papel", "tesoura"])
+if suaEscolha == "pedra":
+    if minhaEscolha == "tesoura":
+        print("Jogador ganhou! Computador escolheu ", minhaEscolha)
     elif minhaEscolha == "papel":
-        if suaEscolha == "pedra":
-            print("Jogador 2 perdeu! Jogador 1 escolheu ", minhaEscolha)
-        elif suaEscolha == "tesoura":
-            print("Jogador 2 ganhou! Jogador 1 escolheu ", minhaEscolha)
-        else:
-            print("Empate! Ambos escolheram ", minhaEscolha)
-    elif minhaEscolha == "tesoura":
-        if suaEscolha == "pedra":
-            print("Jogador 2 ganhou! Jogador 1 escolheu ", minhaEscolha)
-        elif suaEscolha == "papel":
-            print("Jogador 2 perdeu! Jogador 1 escolheu ", minhaEscolha)
-        else:
-            print("Empate! Ambos escolheram ", minhaEscolha)
-    minhaEscolha = random.choice(["pedra", "papel", "tesoura"])
-    print("Jogador 1 já escolheu")
-except:
+        print("Jogador perdeu! Computador escolheu ", minhaEscolha)
+    else:
+        print("Empate! Ambos escolheram ", minhaEscolha)
+elif suaEscolha == "papel":
+    if minhaEscolha == "tesoura":
+        print("Jogador perdeu! Computador escolheu ", minhaEscolha)
+    elif minhaEscolha == "pedra":
+        print("Jogador ganhou! Computador escolheu ", minhaEscolha)
+    else:
+        print("Empate! Ambos escolheram ", minhaEscolha)
+elif suaEscolha == "tesoura":
+    if minhaEscolha == "papel":
+        print("Jogador ganhou! Computador escolheu ", minhaEscolha)
+    elif minhaEscolha == "pedra":
+        print("Jogador perdeu! Computador escolheu ", minhaEscolha)
+    else:
+        print("Empate! Ambos escolheram ", minhaEscolha)
+else:
     print("Algo deu errado!")
